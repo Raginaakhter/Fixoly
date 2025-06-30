@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "service_id": "MBR-001",
+    "title": "Screen Replacement",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUoA2GwKCs922RL5F8u7nAq_HjVZrYjAm8pqqzq-2sz7MU07Vi9xjP3H-tdS54awGpXJ0&usqp=CAU",
+    "price": 1500,
+    "description": "We replace cracked or broken phone screens with high-quality original displays."
+  },
+  {
+    "id": 2,
+    "service_id": "MBR-002",
+    "title": "Battery Replacement",
+    "image": "https://img.freepik.com/premium-photo/it-auditor-cloud-architect-gaming-wallpaper_1297153-17023.jpg?ga=GA1.1.840742692.1748253951&semt=ais_hybrid&w=740",
+    "price": 1000,
+    "description": "Get rid of fast-draining batteries. We install long-lasting, genuine batteries."
+  },
+  {
+    "id": 3,
+    "service_id": "MBR-003",
+    "title": "Charging Port Repair",
+    "image": "https://i.ibb.co/vxzSVMCg/Whats-App-Image-2024-10-26-at-21-17-52-78808103.jpg",
+    "price": 800,
+    "description": "Fix phones that aren’t charging properly due to faulty charging ports."
+  },
+  {
+    "id": 4,
+    "service_id": "MBR-004",
+    "title": "Water Damage Repair",
+    "image": "https://media.istockphoto.com/id/2166374711/photo/technical-support-center-customer-service-internet-business-technology-concept-man-hand-using.jpg?b=1&s=612x612&w=0&k=20&c=b0DIzPT16AzLJLdyIluXxPaczTP2pQhGGDaVZ8M9n_Q=",
+    "price": 2000,
+    "description": "We recover and repair mobile phones affected by water or other liquid damage."
+  },
+  {
+    "id": 5,
+    "service_id": "MBR-005",
+    "title": "Speaker & Mic Repair",
+    "image": "https://img.freepik.com/free-photo/technician-antistatic-gloves-using-screwdriver-disassemble-borken-mobile-phone-going-repair-motherboard-sitting-his-workplace-laboratory-with-needed-equipment_343059-485.jpg?ga=GA1.1.840742692.1748253951&semt=ais_hybrid&w=740",
+    "price": 700,
+    "description": "Clear audio issues by repairing or replacing faulty speakers or microphones."
+  },
+  {
+    "id": 6,
+    "service_id": "MBR-006",
+    "title": "Software Troubleshooting",
+    "image": "https://img.freepik.com/free-photo/electronic-technician-holds-two-identical-smartphones-comparison-one-hand-broken-another-new_613910-20299.jpg?ga=GA1.1.840742692.1748253951&semt=ais_hybrid&w=740",
+    "price": 600,
+    "description": "Fix mobile OS bugs, app crashes, and restore software functionality."
+  }
+]
