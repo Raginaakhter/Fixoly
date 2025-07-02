@@ -8,8 +8,13 @@ import {
 } from "react-router-dom";
 import Root from './Root/Root';
 import Home from './components/Home';
-// import Login from './components/Login';
-// import Register from './Register';
+import Login from './Login';
+import SignUp from './Root/SignUp';
+import AuthProvider from './provider/AuthProvider';
+import Users from './components/Users';
+import Checkout from './components/Checkout';
+// import App from './App';
+
 
 const router = createBrowserRouter([
   {
@@ -21,16 +26,27 @@ const router = createBrowserRouter([
         element: <Home></Home>,
 
       },
-      //  {
-      //   path: "/login",
-      //   element:<Login></Login>
+       {
+        path: "/login",
+        element:<Login></Login>
 
-      // },
-      //  {
-      //   path: "/register",
-      //   element: <Register></Register>,
+      },
+       {
+        path: "/signup",
+        element:<SignUp></SignUp>
 
-      // },
+      },
+      {
+        path: "/users",
+        element:<Users></Users>,
+         loader: ()=>fetch('http://localhost:5000/users'),
+
+      },
+       {
+        path: "/checkout/:id",
+        element:<Checkout></Checkout>
+
+      },
        
     ]
   },
@@ -38,6 +54,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   <RouterProvider router={router} />
+<AuthProvider>
+     <RouterProvider router={router} />
+</AuthProvider>
   </StrictMode>,
 )
