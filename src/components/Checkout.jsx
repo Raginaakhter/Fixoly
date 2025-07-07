@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const Checkout = () => {
@@ -7,7 +7,7 @@ const Checkout = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${id}`)
+    fetch(`http://localhost:5000/Services/${id}`)
       .then(res => res.json())
       .then(data => {
         setService(data);
@@ -20,7 +20,6 @@ const Checkout = () => {
   }, [id]);
 
   if (loading) return <p className="text-center mt-10">Loading service...</p>;
-
   if (!service || !service.title) return <p className="text-center mt-10 text-red-500">No service found!</p>;
 
   return (
@@ -33,7 +32,9 @@ const Checkout = () => {
       <h2 className="text-2xl font-bold mt-4">{service.title}</h2>
       <p className="text-gray-700 my-2">{service.description}</p>
       <p className="text-lg font-semibold">Price: ৳{service.price}</p>
-      <p className="text-sm text-gray-500 mt-1">Service ID: {service.service_id}</p>
+
+  
+      <Link to={`/book/${id}`} className="btn bg-blue-600 text-white mt-4">Book Now</Link>
     </div>
   );
 };

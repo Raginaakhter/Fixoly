@@ -15,6 +15,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log("Logged in user:", user);
+              
             })
             .catch(error => console.log("Login error:", error.message));
     };

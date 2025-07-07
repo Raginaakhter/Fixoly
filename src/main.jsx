@@ -13,6 +13,7 @@ import SignUp from './Root/SignUp';
 import AuthProvider from './provider/AuthProvider';
 import Users from './components/Users';
 import Checkout from './components/Checkout';
+import Bookservice from './components/Bookservice';
 // import App from './App';
 
 
@@ -45,6 +46,12 @@ const router = createBrowserRouter([
        {
         path: "/checkout/:id",
         element:<Checkout></Checkout>
+
+      },
+       {
+        path: "/book/:id",
+        element:<Bookservice></Bookservice>,
+        loader:({params})=>fetch(`http://localhost:5000/Services/${params.id}`)
 
       },
        
