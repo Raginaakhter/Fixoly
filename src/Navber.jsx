@@ -19,6 +19,12 @@ const Navber = () => {
     <>
       <li><Link to="/">Home</Link></li>
       <li><Link to="/about">About</Link></li>
+
+  
+      {user?.email && (
+        <li><Link to="/bookings">My Bookings</Link></li>
+      )}
+
       <li><Link to="/users">Users</Link></li>
     </>
   );
@@ -37,7 +43,7 @@ const Navber = () => {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
           </div>
           <ul
@@ -47,6 +53,7 @@ const Navber = () => {
             {NavItem}
           </ul>
         </div>
+
         {/* Logo */}
         <img
           className="h-20 w-25 rounded-2xl"

@@ -14,6 +14,7 @@ import AuthProvider from './provider/AuthProvider';
 import Users from './components/Users';
 import Checkout from './components/Checkout';
 import Bookservice from './components/Bookservice';
+import Bookings from './Bookings/Bookings';
 // import App from './App';
 
 
@@ -52,6 +53,12 @@ const router = createBrowserRouter([
         path: "/book/:id",
         element:<Bookservice></Bookservice>,
         loader:({params})=>fetch(`http://localhost:5000/Services/${params.id}`)
+
+      },
+       {
+        path: "/bookings",
+        element:<Bookings></Bookings>,
+     
 
       },
        

@@ -8,22 +8,29 @@ const Bookservice = () => {
 
     const handleBookService = event => {
         event.preventDefault();
+          console.log('object', service); 
         const form = event.target;
         const name = form.name.value;
         const date = form.date.value;
         const email = form.email.value;
         const price = form.price.value;
+        const imgUrl = service?.img ? service.img : 'https://i.ibb.co/default-image.png';
         const booking = {
             customerName: name,
-            Email: email,
-            img: service.img,
-            Date: date,
-            Price: price,
-            Service: service._id,
-            Service_title: service.title
-
+            email: email,
+            // img: service?.img,
+            //    ? service.img : 'https://i.ibb.co/default-image.png',
+            img: imgUrl,
+            date: date,
+            price: price,
+            serviceId: service?._id,
+            serviceTitle: service?.title
         }
+
         console.log(booking);
+           console.log('service:', service?.img);
+
+
 
         fetch('http://localhost:5000/bookings', {
             method: "POST",
