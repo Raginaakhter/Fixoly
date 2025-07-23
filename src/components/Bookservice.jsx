@@ -8,27 +8,29 @@ const Bookservice = () => {
 
     const handleBookService = event => {
         event.preventDefault();
-          console.log('object', service); 
+        console.log('object', service);
         const form = event.target;
         const name = form.name.value;
         const date = form.date.value;
         const email = form.email.value;
         const price = form.price.value;
-        const imgUrl = service?.img ? service.img : 'https://i.ibb.co/default-image.png';
+        const img = form.img.value;
+        //  const imgUrl = service?.img ? service.img : 'https://i.ibb.co/default-image.png';
         const booking = {
             customerName: name,
             email: email,
             // img: service?.img,
             //    ? service.img : 'https://i.ibb.co/default-image.png',
-            img: imgUrl,
+            // img: imgUrl,
             date: date,
+            img: img,
             price: price,
             serviceId: service?._id,
             serviceTitle: service?.title
         }
 
         console.log(booking);
-           console.log('service:', service?.img);
+        //    console.log('service:', service?.img);
 
 
 
@@ -83,30 +85,49 @@ const Bookservice = () => {
                         <div className='w-full md:w-1/2'>
                             <fieldset className="fieldset mb-4">
                                 <legend className="fieldset-legend">Name</legend>
-                                <input type="text" name='name' defaultValue={user?.displayName} className="input w-full" placeholder="Type here" />
+                                <input type="text" name="name" defaultValue={user?.displayName} className="input w-full" placeholder="Type here" />
                             </fieldset>
                             <fieldset className="fieldset">
                                 <legend className="fieldset-legend">Email</legend>
-                                <input type="email" name='email' defaultValue={user?.email} className="input w-full" placeholder="Type here" />
+                                <input type="email" name="email" defaultValue={user?.email} className="input w-full" placeholder="Type here" />
                             </fieldset>
                         </div>
 
                         <div className='w-full md:w-1/2'>
                             <fieldset className="fieldset mb-4">
                                 <legend className="fieldset-legend">Date</legend>
-                                <input type="date" name='date' className="input w-full" />
+                                <input type="date" name="date" className="input w-full" />
                             </fieldset>
                             <fieldset className="fieldset">
                                 <legend className="fieldset-legend">Due Price</legend>
-                                <input type="text" name='price' defaultValue={'$' + service.price} className="input w-full" placeholder="Type here" />
+                                <input type="text" name="price" defaultValue={'$' + service.price} className="input w-full" placeholder="Type here" />
                             </fieldset>
+
                         </div>
+
+                        
+
                     </div>
 
-                    <button className=" cursor-pointer input w-full bg-blue-500 text-white text-center mt-6 align-middle font-extrabold justify-center-safe">Submit</button>
                 </div>
-            </form>
-        </div>
+                <div className='w-full md:w-1/2'>
+
+                            <fieldset className="fieldset  ml-25 ">
+                                <legend className="fieldset-legend">Image</legend>
+                                <input type="url" name="img" className="input w-1/1 "placeholder="image url" />
+                                {/* <img src="" alt="" /> */}
+
+
+
+                            </fieldset>
+                          
+
+                        </div>
+
+                <button className=" mb-6 ml-5 mr-5 cursor-pointer input w-full bg-blue-500 text-white text-center mt-6 align-middle font-extrabold justify-center-safe">Submit</button>
+
+            </form >
+        </div >
     );
 };
 

@@ -15,6 +15,7 @@ import Users from './components/Users';
 import Checkout from './components/Checkout';
 import Bookservice from './components/Bookservice';
 import Bookings from './Bookings/Bookings';
+import Privateroute from './Routes/Privateroute';
 // import App from './App';
 
 
@@ -57,7 +58,7 @@ const router = createBrowserRouter([
       },
        {
         path: "/bookings",
-        element:<Bookings></Bookings>,
+        element:<Privateroute><Bookings></Bookings></Privateroute>,
      
 
       },
