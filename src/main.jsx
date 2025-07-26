@@ -16,6 +16,8 @@ import Checkout from './components/Checkout';
 import Bookservice from './components/Bookservice';
 import Bookings from './Bookings/Bookings';
 import Privateroute from './Routes/Privateroute';
+import PrivateRoute from './Routes/Privateroute';
+
 // import App from './App';
 
 
@@ -52,7 +54,7 @@ const router = createBrowserRouter([
       },
        {
         path: "/book/:id",
-        element:<Bookservice></Bookservice>,
+        element:<Privateroute><Bookservice></Bookservice></Privateroute>,
         loader:({params})=>fetch(`http://localhost:5000/Services/${params.id}`)
 
       },
