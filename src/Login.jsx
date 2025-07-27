@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from './provider/AuthProvider';
 import axios from 'axios';
 
@@ -16,23 +16,27 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password);
 
-
-
-
         signIn(email, password)
             .then(result => {
                 const Loggedinuser = result.user;
                 console.log("Logged in user:", Loggedinuser);
                 const user = { email };
 
-                // navigate(location ?.state ? location?.state : '/')
-            
-                axios.post('http://localhost:5000/jwt',user,{withCredentials:true})
-                .then(res =>{
-                    console.log(res.data)
-                } )
+                
+                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                    .then(res => {
+                        console.log("JWT response:", res.data);
+                        
 
+                    //    save ls 
+                        if (res.data?.token) {
+                            localStorage.setItem('token', res.data.token);
+                            console.log("JWT Token saved to localStorage:", res.data.token);
+                        }
 
+                        // navigate(location?.state ? location?.state : '/')
+                    })
+                    .catch(err => console.error("JWT Error:", err));
             })
             .catch(error => console.log("Login error:", error.message));
     };
