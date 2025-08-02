@@ -5,7 +5,7 @@ const Users = () => {
 
     const handleDelete = _id =>{
         console.log("Delete",_id);
-        fetch(`http://localhost:5000/users/${_id}`,{
+        fetch(`https://fixolyserver.vercel.app/users/${_id}`,{
             method:"DELETE"
             // "content-type":"application/json"
         })

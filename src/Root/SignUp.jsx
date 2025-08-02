@@ -25,7 +25,7 @@ const SignUp = () => {
 
     //  local server
         const user = { name, email,password };
-        return fetch('http://localhost:5000/users', {
+        return fetch('https://fixolyserver.vercel.app/users', {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

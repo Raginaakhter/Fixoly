@@ -8,7 +8,7 @@ const Navber = () => {
   const handleLogout = () => {
     logOut()
       .then(() => {
-        console.log("Logged out successfully");
+        // console.log("Logged out successfully");
       })
       .catch(error => {
         console.error("Logout error:", error);

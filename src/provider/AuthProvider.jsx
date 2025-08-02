@@ -27,6 +27,9 @@ const signIn =(email,password)=>{
     setLoading(true); 
     return signOut(auth); 
   };
+//   ................................................
+
+
     useEffect(()=>{
        const unsubscribe = onAuthStateChanged(auth,currentUser=>{
             setUser(currentUser)
@@ -45,7 +48,7 @@ const signIn =(email,password)=>{
         signIn,
         logOut
     }
-
+// .........................................................
 
     return (
         <AuthContext.Provider value={authInfo}>

@@ -8,7 +8,7 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const navigate = useNavigate();
 
-  const url = `http://localhost:5000/bookings?email=${user?.email}`;
+  const url = `https://fixolyserver.vercel.app/bookings?email=${user?.email}`;
 
   useEffect(() => {
     if (user?.email) {
@@ -37,7 +37,7 @@ const Bookings = () => {
   const handleDelete = id => {
     const proceed = confirm("Are you sure you want to delete?");
     if (proceed) {
-      fetch(`http://localhost:5000/bookings/${id}`, {
+      fetch(`https://fixolyserver.vercel.app/bookings/${id}`, {
         method: 'DELETE',
         credentials: 'include'
       })
@@ -53,7 +53,7 @@ const Bookings = () => {
   };
 
   const handleBookingConfirm = id => {
-    fetch(`http://localhost:5000/bookings/${id}`, {
+    fetch(`https://fixolyserver.vercel.app/bookings/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

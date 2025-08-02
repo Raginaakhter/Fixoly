@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       {
         path: "/users",
         element:<Users></Users>,
-         loader: ()=>fetch('http://localhost:5000/users'),
+         loader: ()=>fetch('https://fixolyserver.vercel.app/users'),
 
       },
        {
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
        {
         path: "/book/:id",
         element:<Privateroute><Bookservice></Bookservice></Privateroute>,
-        loader:({params})=>fetch(`http://localhost:5000/Services/${params.id}`)
+        loader:({params})=>fetch(`https://fixolyserver.vercel.app/Services/${params.id}`)
 
       },
        {

@@ -34,7 +34,7 @@ const Bookservice = () => {
 
 
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://fixolyserver.vercel.app/bookings', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -59,7 +59,7 @@ const Bookservice = () => {
     const [service, setService] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/Services/${id}`)
+        fetch(`https://fixolyserver.vercel.app/Services/${id}`)
             .then(res => res.json())
             .then(data => setService(data))
             .catch(err => console.error("Error loading service:", err));
