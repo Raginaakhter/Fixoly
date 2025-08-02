@@ -25,7 +25,7 @@ const Navber = () => {
         <li><Link to="/bookings">My Bookings</Link></li>
       )}
 
-      <li><Link to="/users">Users</Link></li>
+      {/* <li><Link to="/users">Users</Link></li> */}
     </>
   );
 

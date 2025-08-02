@@ -11,12 +11,13 @@ import Home from './components/Home';
 import Login from './Login';
 import SignUp from './Root/SignUp';
 import AuthProvider from './provider/AuthProvider';
-import Users from './components/Users';
+// import Users from './components/Users';
 import Checkout from './components/Checkout';
 import Bookservice from './components/Bookservice';
 import Bookings from './Bookings/Bookings';
 import Privateroute from './Routes/Privateroute';
 import PrivateRoute from './Routes/Privateroute';
+import About from './components/About';
 
 // import App from './App';
 
@@ -41,15 +42,20 @@ const router = createBrowserRouter([
         element:<SignUp></SignUp>
 
       },
-      {
-        path: "/users",
-        element:<Users></Users>,
-         loader: ()=>fetch('https://fixolyserver.vercel.app/users'),
+      // {
+      //   path: "/users",
+      //   element:<Users></Users>,
+      //    loader: ()=>fetch('https://fixolyserver.vercel.app/users'),
 
-      },
+      // },
        {
         path: "/checkout/:id",
         element:<Checkout></Checkout>
+
+      },
+       {
+        path: '/about',
+        element:<About></About>
 
       },
        {

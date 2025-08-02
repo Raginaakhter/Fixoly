@@ -1,10 +1,11 @@
 import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from "../provider/AuthProvider";
 
 const SignUp = () => {
   const [success, setSuccess] = useState('');
-  const { createUser } = useContext(AuthContext); 
-
+  const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate(); 
   const handleAddUser = event => {
     event.preventDefault();
     const form = event.target;
@@ -17,14 +18,13 @@ const SignUp = () => {
       return;
     }
 
-    // new user
+    // Create new user with Firebase
     createUser(email, password)
       .then(result => {
         const createdUser = result.user;
         console.log("Firebase user created:", createdUser);
 
-    //  local server
-        const user = { name, email,password };
+        const user = { name, email, password };
         return fetch('https://fixolyserver.vercel.app/users', {
           method: "POST",
           headers: {
@@ -39,6 +39,9 @@ const SignUp = () => {
         if (data.insertedId) {
           setSuccess("User added successfully!");
           form.reset();
+
+          // Redirect to home page after signup
+          navigate('/');
         }
       })
       .catch(error => {

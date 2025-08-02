@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from './provider/AuthProvider';
 import axios from 'axios';
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
     const location = useLocation();
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     console.log(location);
 
     const handleLogin = event => {
@@ -34,7 +34,7 @@ const Login = () => {
                             console.log("JWT Token saved to localStorage:", res.data.token);
                         }
 
-                        // navigate(location?.state ? location?.state : '/')
+                        navigate(location?.state ? location?.state : '/')
                     })
                     .catch(err => console.error("JWT Error:", err));
             })
